@@ -145,11 +145,138 @@
             <section class="gallery-section">
                 <h1>Photo Gallery</h1>
                 <div class="photo-grid">
-                    <!-- Photo items will be added by JavaScript -->
+                    <div class="photo-item" onclick="openLightbox(this)">
+                        <img src="images/B52A0800.avif" alt="Photography" loading="lazy">
+                        <div class="photo-caption">
+                            <h3>Nature Photography</h3>
+                        </div>
+                    </div>
+                    <div class="photo-item" onclick="openLightbox(this)">
+                        <img src="images/IMG_4017_HEIC.avif" alt="Photography" loading="lazy">
+                        <div class="photo-caption">
+                            <h3>Landscape</h3>
+                        </div>
+                    </div>
+                    <div class="photo-item" onclick="openLightbox(this)">
+                        <img src="images/IMG_4126_HEIC.avif" alt="Photography" loading="lazy">
+                        <div class="photo-caption">
+                            <h3>Nature</h3>
+                        </div>
+                    </div>
+                    <div class="photo-item" onclick="openLightbox(this)">
+                        <img src="images/IMG_4159_HEIC.avif" alt="Photography" loading="lazy">
+                        <div class="photo-caption">
+                            <h3>Scenery</h3>
+                        </div>
+                    </div>
+                    <div class="photo-item" onclick="openLightbox(this)">
+                        <img src="images/IMG_4165_HEIC.avif" alt="Photography" loading="lazy">
+                        <div class="photo-caption">
+                            <h3>Landscape</h3>
+                        </div>
+                    </div>
+                    <div class="photo-item" onclick="openLightbox(this)">
+                        <img src="images/IMG_5783_HEIC.avif" alt="Photography" loading="lazy">
+                        <div class="photo-caption">
+                            <h3>Nature</h3>
+                        </div>
+                    </div>
+                    <div class="photo-item" onclick="openLightbox(this)">
+                        <img src="images/IMG_7652_JPG.avif" alt="Photography" loading="lazy">
+                        <div class="photo-caption">
+                            <h3>Landscape</h3>
+                        </div>
+                    </div>
+                    <div class="photo-item" onclick="openLightbox(this)">
+                        <img src="images/IMG_9598_JPG.avif" alt="Photography" loading="lazy">
+                        <div class="photo-caption">
+                            <h3>Nature</h3>
+                        </div>
+                    </div>
+                    <div class="photo-item" onclick="openLightbox(this)">
+                        <img src="images/IMG_9601_JPG.avif" alt="Photography" loading="lazy">
+                        <div class="photo-caption">
+                            <h3>Scenery</h3>
+                        </div>
+                    </div>
+                    <div class="photo-item" onclick="openLightbox(this)">
+                        <img src="images/C680EBFA-D656-4871-A50B-CF29BA0C9775.JPG" alt="Photography" loading="lazy">
+                        <div class="photo-caption">
+                            <h3>Nature</h3>
+                        </div>
+                    </div>
+                    <div class="photo-item" onclick="openLightbox(this)">
+                        <img src="images/0118A01B-5BEA-4720-A124-C4DEE13C6648.jpg" alt="Photography" loading="lazy">
+                        <div class="photo-caption">
+                            <h3>Landscape</h3>
+                        </div>
+                    </div>
+                    <div class="photo-item" onclick="openLightbox(this)">
+                        <img src="images/IMG_0440.JPG" alt="Photography" loading="lazy">
+                        <div class="photo-caption">
+                            <h3>Nature</h3>
+                        </div>
+                    </div>
+                    <div class="photo-item" onclick="openLightbox(this)">
+                        <img src="images/IMG_0441.JPG" alt="Photography" loading="lazy">
+                        <div class="photo-caption">
+                            <h3>Scenery</h3>
+                        </div>
+                    </div>
+                    <div class="photo-item" onclick="openLightbox(this)">
+                        <img src="images/IMG_0442.JPG" alt="Photography" loading="lazy">
+                        <div class="photo-caption">
+                            <h3>Nature</h3>
+                        </div>
+                    </div>
+                    <div class="photo-item" onclick="openLightbox(this)">
+                        <img src="images/IMG_0443.JPG" alt="Photography" loading="lazy">
+                        <div class="photo-caption">
+                            <h3>Landscape</h3>
+                        </div>
+                    </div>
+                    <div class="photo-item" onclick="openLightbox(this)">
+                        <img src="images/IMG_6889.JPG" alt="Photography" loading="lazy">
+                        <div class="photo-caption">
+                            <h3>Nature</h3>
+                        </div>
+                    </div>
+                    <div class="photo-item" onclick="openLightbox(this)">
+                        <img src="images/IMG_6925.JPG" alt="Photography" loading="lazy">
+                        <div class="photo-caption">
+                            <h3>Scenery</h3>
+                        </div>
+                    </div>
+                    <div class="photo-item" onclick="openLightbox(this)">
+                        <img src="images/IMG_6942.JPG" alt="Photography" loading="lazy">
+                        <div class="photo-caption">
+                            <h3>Nature</h3>
+                        </div>
+                    </div>
+                    <div class="photo-item" onclick="openLightbox(this)">
+                        <img src="images/IMG_6995.PG" alt="Photography" loading="lazy">
+                        <div class="photo-caption">
+                            <h3>Landscape</h3>
+                        </div>
+                    </div>
+                    <div class="photo-item" onclick="openLightbox(this)">
+                        <img src="images/IMG_9865.JPG" alt="Photography" loading="lazy">
+                        <div class="photo-caption">
+                            <h3>Scenery</h3>
+                        </div>
+                    </div>
                 </div>
             </section>
         </div>
     </main>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="lightbox">
+        <div class="lightbox-content">
+            <span class="close-lightbox">&times;</span>
+            <img id="lightbox-img" src="" alt="Enlarged view">
+        </div>
+    </div>
 
     <section id="contact" class="contact">
         <div class="matrix-bg"></div>
@@ -266,8 +393,38 @@
                 const newTileCount = Math.floor(window.innerWidth / 100) * Math.floor(window.innerHeight / 100);
                 for (let i = 0; i < newTileCount; i++) {
                     createTile();
-    }
-});
+                }
+            });
+        });
+
+        function openLightbox(element) {
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+            const img = element.querySelector('img');
+            
+            lightboxImg.src = img.src;
+            lightbox.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+
+        // Close lightbox when clicking the close button or outside the image
+        document.querySelector('.close-lightbox').addEventListener('click', closeLightbox);
+        document.getElementById('lightbox').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeLightbox();
+            }
+        });
+
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close lightbox with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeLightbox();
+            }
         });
     </script>
 </body>
