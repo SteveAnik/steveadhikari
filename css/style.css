@@ -421,7 +421,7 @@ body {
 
 /* Hero Background */
 .hero.main-background {
-    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.9)), url('../images/small size.jpeg');
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8)), url('../images/small size.jpeg');
     background-size: cover;
     background-position: center 10%;
     background-attachment: fixed;
