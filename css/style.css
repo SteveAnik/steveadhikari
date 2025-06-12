@@ -1960,3 +1960,68 @@ button[type="submit"]:disabled {
     margin-top: 4rem;
 }
 
+.cta-buttons .btn.primary {
+    padding: 0.8rem 2rem;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 30px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+    display: inline-block;
+    position: relative;
+}
+
+.cta-buttons .btn.primary::before {
+    content: '';
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    right: -3px;
+    bottom: -3px;
+    background: linear-gradient(90deg, 
+        transparent,
+        rgba(52, 152, 219, 0),
+        rgba(52, 152, 219, 0.8),
+        rgba(52, 152, 219, 0),
+        transparent
+    );
+    border-radius: 33px;
+    z-index: -1;
+    animation: snakeGlow 4s linear infinite;
+    background-size: 200% 100%;
+    filter: blur(2px);
+}
+
+@keyframes snakeGlow {
+    0% {
+        background-position: 200% 0;
+    }
+    100% {
+        background-position: -200% 0;
+    }
+}
+
+.cta-buttons .btn.primary:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-2px);
+    border-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.cta-buttons .btn.primary:hover::before {
+    animation: snakeGlow 2s linear infinite;
+    filter: blur(3px);
+}
+
+.cta-buttons .btn.primary:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
