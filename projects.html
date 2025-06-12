@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - Steve A. Adhikari</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .page-content {
+            min-height: 100vh;
+            background-color: #000;
+            padding: 120px 20px 80px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .tile-grid {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+            gap: 1px;
+            pointer-events: none;
+            z-index: 0;
+        }
+        
+        .tile {
+            background-color: rgba(52, 152, 219, 0.1);
+            transition: all 0.3s ease;
+            aspect-ratio: 1;
+        }
+        
+        .tile:hover {
+            background-color: rgba(52, 152, 219, 0.3);
+        }
+        
+        .content-wrapper {
+            position: relative;
+            z-index: 1;
+            max-width: 1400px;
+            margin: 0 auto;
+            color: #fff;
+        }
+        
+        .projects-section {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 2rem;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            margin-bottom: 2rem;
+        }
+        
+        .projects-section h1 {
+            color: #3498db;
+            margin-bottom: 2rem;
+            font-size: 2.5rem;
+            text-align: center;
+        }
+        
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+        
+        .project-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(52, 152, 219, 0.2);
+            border-color: rgba(52, 152, 219, 0.3);
+        }
+        
+        .project-image {
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .project-card:hover .project-image img {
+            transform: scale(1.05);
+        }
+        
+        .project-info {
+            padding: 1.5rem;
+        }
+        
+        .project-info h3 {
+            color: #3498db;
+            margin-bottom: 0.5rem;
+            font-size: 1.5rem;
+        }
+        
+        .project-category {
+            display: inline-block;
+            background: rgba(52, 152, 219, 0.2);
+            color: #3498db;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-bottom: 1rem;
+        }
+        
+        .project-description {
+            color: #ccc;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+        
+        .project-links {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #3498db;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border: 1px solid #3498db;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+        
+        .project-link:hover {
+            background: rgba(52, 152, 219, 0.1);
+            transform: translateY(-2px);
+        }
+        
+        @media (max-width: 768px) {
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="index.html" class="logo">STEVE A. ADHIKARI</a>
+        <div class="menu-btn">
+            <div class="menu-btn__lines"></div>
+        </div>
+        <div class="nav-center">
+            <ul class="nav-links">
+                <li><a href="about.html">About</a></li>
+                <li><a href="photo.html">Photo</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li class="mobile-contact-btn"><a href="#contact" class="contact-btn">Contact Now</a></li>
+            </ul>
+        </div>
+        <div class="contact-btn-container desktop-only">
+            <a href="#contact" class="contact-btn">Contact Now</a>
+        </div>
+    </nav>
+
+    
+    <main class="page-content">
+        <div class="tile-grid">
+            <!-- Tiles will be added by JavaScript -->
+        </div>
+        
+        <div class="content-wrapper">
+            <section class="projects-section">
+                <h1>My Projects</h1>
+                <div class="projects-grid">
+                    <!-- Project cards will be added by JavaScript -->
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <section id="contact" class="contact">
+        <div class="matrix-bg"></div>
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h2>Get In Touch</h2>
+                    <div class="contact-details">
+                        <p><i class="fas fa-envelope"></i> anikadhikari1999@gmail.com</p>
+                        <p><i class="fas fa-phone"></i> +1 (316) 251-2055</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Wichita, KS</p>
+                    </div>
+                    <div class="quick-links">
+                        <h3>Quick Links</h3>
+                        <div class="link-columns">
+                            <div class="link-column">
+                                <a href="about.html">About</a>
+                                <a href="#services">Services</a>
+                                <a href="#portfolio">Portfolio</a>
+                            </div>
+                            <div class="link-column">
+                                <a href="photo.html">Photo</a>
+                                <a href="projects.html">Projects</a>
+                                <a href="#contact">Contact</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/steve-adhikari-225816190/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://github.com/SteveAnik" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="https://www.facebook.com/anik.adhikari.180" target="_blank"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/adhikari_anik/" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.youtube.com/@anikadhikari851" target="_blank"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="contact-form-container">
+                    <h2>Send Me a Message</h2>
+                    <form id="contact-form">
+                        <input type="text" placeholder="Your Name" required>
+                        <input type="email" placeholder="Your Email" required>
+                        <textarea placeholder="Your Message" required></textarea>
+                        <button type="submit" class="btn primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Steve Adhikari. All rights reserved.</p>
+            </div>
+        </div>
+    </section>
+    
+    <script src="js/matrix.js"></script>
+    <script src="js/mobile-menu.js"></script>
+    <script>
+        // Create tiles
+        document.addEventListener('DOMContentLoaded', function() {
+            const tileGrid = document.querySelector('.tile-grid');
+            const projectsGrid = document.querySelector('.projects-grid');
+            const tileCount = Math.floor(window.innerWidth / 100) * Math.floor(window.innerHeight / 100);
+            
+            // Sample project data - replace with your actual projects
+            const projects = [
+                {
+                    title: 'Web Development',
+                    category: 'Development',
+                    description: 'Modern web applications built with the latest technologies.',
+                    image: 'https://source.unsplash.com/random/600x400/?web,development',
+                    demoLink: '#',
+                    codeLink: '#'
+                },
+                {
+                    title: 'UI/UX Design',
+                    category: 'Design',
+                    description: 'User-centered design solutions for web and mobile applications.',
+                    image: 'https://source.unsplash.com/random/600x400/?design,ui',
+                    demoLink: '#',
+                    codeLink: '#'
+                },
+                {
+                    title: 'Network Security',
+                    category: 'Security',
+                    description: 'Secure network infrastructure and cybersecurity solutions.',
+                    image: 'https://source.unsplash.com/random/600x400/?network,security',
+                    demoLink: '#',
+                    codeLink: '#'
+                }
+            ];
+            
+            // Create tiles
+            for (let i = 0; i < tileCount; i++) {
+                createTile();
+            }
+            
+            // Create project cards
+            projects.forEach(project => {
+                const projectCard = document.createElement('div');
+                projectCard.className = 'project-card';
+                projectCard.innerHTML = `
+                    <div class="project-image">
+                        <img src="${project.image}" alt="${project.title}">
+                    </div>
+                    <div class="project-info">
+                        <h3>${project.title}</h3>
+                        <span class="project-category">${project.category}</span>
+                        <p class="project-description">${project.description}</p>
+                        <div class="project-links">
+                            <a href="${project.demoLink}" class="project-link" target="_blank">
+                                <i class="fas fa-external-link-alt"></i> Demo
+                            </a>
+                            <a href="${project.codeLink}" class="project-link" target="_blank">
+                                <i class="fab fa-github"></i> Code
+                            </a>
+                        </div>
+                    </div>
+                `;
+                projectsGrid.appendChild(projectCard);
+            });
+            
+            function createTile() {
+                const tile = document.createElement('div');
+                tile.className = 'tile';
+                tileGrid.appendChild(tile);
+                
+                // Add hover effect
+                tile.addEventListener('mousemove', (e) => {
+                    const rect = tile.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+                    tile.style.transform = `perspective(1000px) rotateX(${(y - rect.height/2) / 20}deg) rotateY(${(x - rect.width/2) / 20}deg)`;
+                });
+                
+                tile.addEventListener('mouseleave', () => {
+                    tile.style.transform = 'none';
+                });
+            }
+            
+            // Handle window resize
+            window.addEventListener('resize', () => {
+                const tiles = document.querySelectorAll('.tile');
+                tiles.forEach(tile => tile.remove());
+                
+                const newTileCount = Math.floor(window.innerWidth / 100) * Math.floor(window.innerHeight / 100);
+                for (let i = 0; i < newTileCount; i++) {
+                    createTile();
+                }
+            });
+        });
+    </script>
+</body>
+</html>

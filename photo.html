@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo - Steve A. Adhikari</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .page-content {
+            min-height: 100vh;
+            background-color: #000;
+            padding: 120px 20px 80px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .tile-grid {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+            gap: 1px;
+            pointer-events: none;
+            z-index: 0;
+        }
+        
+        .tile {
+            background-color: rgba(52, 152, 219, 0.1);
+            transition: all 0.3s ease;
+            aspect-ratio: 1;
+        }
+        
+        .tile:hover {
+            background-color: rgba(52, 152, 219, 0.3);
+        }
+        
+        .content-wrapper {
+            position: relative;
+            z-index: 1;
+            max-width: 1400px;
+            margin: 0 auto;
+            color: #fff;
+        }
+        
+        .gallery-section {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 2rem;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            margin-bottom: 2rem;
+        }
+        
+        .gallery-section h1 {
+            color: #3498db;
+            margin-bottom: 2rem;
+            font-size: 2.5rem;
+            text-align: center;
+        }
+        
+        .photo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .photo-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            aspect-ratio: 4/3;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .photo-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .photo-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            color: white;
+            padding: 1.5rem 1rem 1rem;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+        
+        .photo-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(52, 152, 219, 0.3);
+        }
+        
+        .photo-item:hover img {
+            transform: scale(1.05);
+        }
+        
+        .photo-item:hover .photo-caption {
+            transform: translateY(0);
+        }
+        
+        @media (max-width: 768px) {
+            .photo-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="index.html" class="logo">STEVE A. ADHIKARI</a>
+        <div class="menu-btn">
+            <div class="menu-btn__lines"></div>
+        </div>
+        <div class="nav-center">
+            <ul class="nav-links">
+                <li><a href="about.html">About</a></li>
+                <li><a href="photo.html">Photo</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li class="mobile-contact-btn"><a href="#contact" class="contact-btn">Contact Now</a></li>
+            </ul>
+        </div>
+        <div class="contact-btn-container desktop-only">
+            <a href="#contact" class="contact-btn">Contact Now</a>
+        </div>
+    </nav>
+
+    
+    <main class="page-content">
+        <div class="tile-grid">
+            <!-- Tiles will be added by JavaScript -->
+        </div>
+        
+        <div class="content-wrapper">
+            <section class="gallery-section">
+                <h1>Photo Gallery</h1>
+                <div class="photo-grid">
+                    <!-- Photo items will be added by JavaScript -->
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <section id="contact" class="contact">
+        <div class="matrix-bg"></div>
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h2>Get In Touch</h2>
+                    <div class="contact-details">
+                        <p><i class="fas fa-envelope"></i> anikadhikari1999@gmail.com</p>
+                        <p><i class="fas fa-phone"></i> +1 (316) 251-2055</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Wichita, KS</p>
+                    </div>
+                    <div class="quick-links">
+                        <h3>Quick Links</h3>
+                        <div class="link-columns">
+                            <div class="link-column">
+                                <a href="about.html">About</a>
+                                <a href="#services">Services</a>
+                                <a href="#portfolio">Portfolio</a>
+                            </div>
+                            <div class="link-column">
+                                <a href="photo.html">Photo</a>
+                                <a href="projects.html">Projects</a>
+                                <a href="#contact">Contact</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/steve-adhikari-225816190/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://github.com/SteveAnik" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="https://www.facebook.com/anik.adhikari.180" target="_blank"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/adhikari_anik/" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.youtube.com/@anikadhikari851" target="_blank"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="contact-form-container">
+                    <h2>Send Me a Message</h2>
+                    <form id="contact-form">
+                        <input type="text" placeholder="Your Name" required>
+                        <input type="email" placeholder="Your Email" required>
+                        <textarea placeholder="Your Message" required></textarea>
+                        <button type="submit" class="btn primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Steve Adhikari. All rights reserved.</p>
+            </div>
+        </div>
+    </section>
+    
+    <script src="js/matrix.js"></script>
+    <script src="js/mobile-menu.js"></script>
+    <script>
+        // Create tiles
+        document.addEventListener('DOMContentLoaded', function() {
+            const tileGrid = document.querySelector('.tile-grid');
+            const photoGrid = document.querySelector('.photo-grid');
+            const tileCount = Math.floor(window.innerWidth / 100) * Math.floor(window.innerHeight / 100);
+            
+            // Sample photo data - replace with your actual photos
+            const photos = [
+                { id: 1, title: 'Nature', category: 'landscape' },
+                { id: 2, title: 'Portrait', category: 'portrait' },
+                { id: 3, title: 'City Life', category: 'urban' },
+                { id: 4, title: 'Abstract', category: 'art' },
+                { id: 5, title: 'Wildlife', category: 'nature' },
+                { id: 6, title: 'Street', category: 'urban' },
+                // Add more photos as needed
+            ];
+            
+            // Create tiles
+            for (let i = 0; i < tileCount; i++) {
+                createTile();
+            }
+            
+            // Create photo items
+            photos.forEach(photo => {
+                const photoItem = document.createElement('div');
+                photoItem.className = 'photo-item';
+                photoItem.innerHTML = `
+                    <img src="https://source.unsplash.com/random/600x400/?${photo.category},${photo.id}" alt="${photo.title}">
+                    <div class="photo-caption">
+                        <h3>${photo.title}</h3>
+                        <p>${photo.category}</p>
+                    </div>
+                `;
+                photoGrid.appendChild(photoItem);
+            });
+            
+            function createTile() {
+                const tile = document.createElement('div');
+                tile.className = 'tile';
+                tileGrid.appendChild(tile);
+                
+                // Add hover effect
+                tile.addEventListener('mousemove', (e) => {
+                    const rect = tile.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+                    tile.style.transform = `perspective(1000px) rotateX(${(y - rect.height/2) / 20}deg) rotateY(${(x - rect.width/2) / 20}deg)`;
+                });
+                
+                tile.addEventListener('mouseleave', () => {
+                    tile.style.transform = 'none';
+                });
+            }
+            
+            // Handle window resize
+            window.addEventListener('resize', () => {
+                const tiles = document.querySelectorAll('.tile');
+                tiles.forEach(tile => tile.remove());
+                
+                const newTileCount = Math.floor(window.innerWidth / 100) * Math.floor(window.innerHeight / 100);
+                for (let i = 0; i < newTileCount; i++) {
+                    createTile();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
