@@ -152,6 +152,39 @@
                 grid-template-columns: 1fr;
             }
         }
+        
+        .project-photos-section {
+            margin-top: 3rem;
+            background: rgba(0,0,0,0.7);
+            border-radius: 15px;
+            padding: 2rem;
+            border: 1px solid rgba(255,255,255,0.08);
+            box-shadow: 0 8px 32px rgba(52,152,219,0.08);
+        }
+        .gallery-heading {
+            color: #3498db;
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 2rem;
+            letter-spacing: 1px;
+        }
+        .project-photo-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+        }
+        .project-photo-gallery img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 12px;
+            box-shadow: 0 4px 16px rgba(52,152,219,0.10);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .project-photo-gallery img:hover {
+            transform: scale(1.04) translateY(-4px);
+            box-shadow: 0 8px 32px rgba(52,152,219,0.18);
+        }
     </style>
 </head>
 <body>
@@ -184,6 +217,22 @@
                 <h1>My Projects</h1>
                 <div class="projects-grid">
                     <!-- Project cards will be added by JavaScript -->
+                </div>
+            </section>
+            <!-- Project Photos Gallery -->
+            <section class="project-photos-section">
+                <h2 class="gallery-heading">Behind the Projects: Moments & Milestones</h2>
+                <div class="project-photo-gallery">
+                    <img src="images/IMG_3882_HEIC.avif" alt="Project Photo 1">
+                    <img src="images/IMG_6349_JPG.avif" alt="Project Photo 2">
+                    <img src="images/IMG_6349.JPG" alt="Project Photo 3">
+                    <img src="images/IMG_6350.JPG" alt="Project Photo 4">
+                    <img src="images/IMG_8407.JPG" alt="Project Photo 5">
+                    <img src="images/IMG_8782.JPG" alt="Project Photo 6">
+                    <img src="images/IMG_9227_JPG.avif" alt="Project Photo 7">
+                    <img src="images/IMG_9607.JPG" alt="Project Photo 8">
+                    <img src="images/IMG_9057_JPG.avif" alt="Project Photo 9">
+                    <img src="images/IMG_9905.JPG" alt="Project Photo 10">
                 </div>
             </section>
         </div>
