@@ -1169,15 +1169,15 @@ section h2::after {
 /* Responsive Design */
 @media (max-width: 768px) {
     .nav-links {
-        display: none;
+        display: flex !important;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        padding: 0;
+        margin: 0;
     }
-    
-    .hero h1 {
-        font-size: 2rem;
-    }
-    
-    .about-content {
-        grid-template-columns: 1fr;
+    .nav-center:not(.active) .nav-links {
+        display: none !important;
     }
 }
 
