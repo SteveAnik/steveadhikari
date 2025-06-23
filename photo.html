@@ -315,16 +315,11 @@
                     </div>
                     <div class="quick-links">
                         <h3>Quick Links</h3>
-                        <div class="link-columns">
-                            <div class="link-column">
+                        <div class="link-columns" style="text-align: center;">
+                            <div class="link-column" style="display: flex; justify-content: center; gap: 2rem;">
                                 <a href="about.html">About</a>
-                                <a href="#services">Services</a>
-                                <a href="#portfolio">Portfolio</a>
-                            </div>
-                            <div class="link-column">
                                 <a href="photo.html">Photo</a>
                                 <a href="projects.html">Projects</a>
-                                <a href="#contact">Contact</a>
                             </div>
                         </div>
                     </div>
@@ -339,9 +334,9 @@
                 <div class="contact-form-container">
                     <h2>Send Me a Message</h2>
                     <form id="contact-form">
-                        <input type="text" placeholder="Your Name" required>
-                        <input type="email" placeholder="Your Email" required>
-                        <textarea placeholder="Your Message" required></textarea>
+                        <input type="text" name="name" placeholder="Your Name" required>
+                        <input type="email" name="email" placeholder="Your Email" required>
+                        <textarea name="message" placeholder="Your Message" required></textarea>
                         <button type="submit" class="btn primary">Send Message</button>
                     </form>
                 </div>
@@ -354,34 +349,14 @@
     
     <script src="js/matrix.js"></script>
     <script src="js/mobile-menu.js"></script>
+    <script src="js/contact-form.js"></script>
     <script>
         // Create tiles
         document.addEventListener('DOMContentLoaded', function() {
             const tileGrid = document.querySelector('.tile-grid');
-            const photoGrid = document.querySelector('.photo-grid');
             const tileCount = Math.floor(window.innerWidth / 100) * Math.floor(window.innerHeight / 100);
             
-            
-            // Create tiles
             for (let i = 0; i < tileCount; i++) {
-                createTile();
-            }
-            
-            // Create photo items
-            photos.forEach(photo => {
-                const photoItem = document.createElement('div');
-                photoItem.className = 'photo-item';
-                photoItem.innerHTML = `
-                    <img src="https://source.unsplash.com/random/600x400/?${photo.category},${photo.id}" alt="${photo.title}">
-                    <div class="photo-caption">
-                        <h3>${photo.title}</h3>
-                        <p>${photo.category}</p>
-                    </div>
-                `;
-                photoGrid.appendChild(photoItem);
-            });
-            
-            function createTile() {
                 const tile = document.createElement('div');
                 tile.className = 'tile';
                 tileGrid.appendChild(tile);
@@ -406,7 +381,9 @@
                 
                 const newTileCount = Math.floor(window.innerWidth / 100) * Math.floor(window.innerHeight / 100);
                 for (let i = 0; i < newTileCount; i++) {
-                    createTile();
+                    const tile = document.createElement('div');
+                    tile.className = 'tile';
+                    tileGrid.appendChild(tile);
                 }
             });
         });

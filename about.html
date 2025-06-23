@@ -120,16 +120,11 @@
                     </div>
                     <div class="quick-links">
                         <h3>Quick Links</h3>
-                        <div class="link-columns">
-                            <div class="link-column">
+                        <div class="link-columns" style="text-align: center;">
+                            <div class="link-column" style="display: flex; justify-content: center; gap: 2rem;">
                                 <a href="about.html">About</a>
-                                <a href="#services">Services</a>
-                                <a href="#portfolio">Portfolio</a>
-                            </div>
-                            <div class="link-column">
                                 <a href="photo.html">Photo</a>
                                 <a href="projects.html">Projects</a>
-                                <a href="#contact">Contact</a>
                             </div>
                         </div>
                     </div>
@@ -144,9 +139,9 @@
                 <div class="contact-form-container">
                     <h2>Send Me a Message</h2>
                     <form id="contact-form">
-                        <input type="text" placeholder="Your Name" required>
-                        <input type="email" placeholder="Your Email" required>
-                        <textarea placeholder="Your Message" required></textarea>
+                        <input type="text" name="name" placeholder="Your Name" required>
+                        <input type="email" name="email" placeholder="Your Email" required>
+                        <textarea name="message" placeholder="Your Message" required></textarea>
                         <button type="submit" class="btn primary">Send Message</button>
                     </form>
                 </div>
@@ -159,6 +154,7 @@
     
     <script src="js/matrix.js"></script>
     <script src="js/mobile-menu.js"></script>
+    <script src="js/contact-form.js"></script>
     <script>
         // Create tiles
         document.addEventListener('DOMContentLoaded', function() {
