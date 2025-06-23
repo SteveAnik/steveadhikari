@@ -185,6 +185,66 @@
             transform: scale(1.04) translateY(-4px);
             box-shadow: 0 8px 32px rgba(52,152,219,0.18);
         }
+        .homelab-section {
+            margin-top: 3rem;
+            background: rgba(0,0,0,0.7);
+            border-radius: 15px;
+            padding: 2rem;
+            border: 1px solid rgba(255,255,255,0.08);
+            box-shadow: 0 8px 32px rgba(52,152,219,0.08);
+        }
+        .homelab-header {
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        .homelab-heading {
+            color: #3498db;
+            font-size: 2rem;
+            margin: 0;
+            text-align: center;
+            width: 100%;
+        }
+        .homelab-reddit-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #ff4500;
+            background: rgba(255,69,0,0.08);
+            border: 1px solid #ff4500;
+            border-radius: 6px;
+            padding: 0.5rem 1.2rem;
+            font-weight: 600;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+        }
+        .homelab-reddit-link:hover {
+            background: #ff4500;
+            color: #fff;
+            box-shadow: 0 4px 16px rgba(255,69,0,0.15);
+        }
+        .homelab-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+        }
+        .homelab-gallery img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 12px;
+            box-shadow: 0 4px 16px rgba(52,152,219,0.10);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .homelab-gallery img:hover {
+            transform: scale(1.04) translateY(-4px);
+            box-shadow: 0 8px 32px rgba(52,152,219,0.18);
+        }
+        .homelab-reddit-link-wrapper {
+            display: flex;
+            justify-content: center;
+            margin-top: 2rem;
+        }
     </style>
 </head>
 <body>
@@ -233,6 +293,23 @@
                     <img src="images/IMG_9607.JPG" alt="Project Photo 8">
                     <img src="images/IMG_9057_JPG.avif" alt="Project Photo 9">
                     <img src="images/IMG_9905.JPG" alt="Project Photo 10">
+                </div>
+            </section>
+            <!-- Homelab Gallery Section -->
+            <section class="homelab-section">
+                <div class="homelab-header">
+                    <h2 class="homelab-heading">My Homelab: Tech Playground & Experiments</h2>
+                </div>
+                <div class="homelab-gallery">
+                    <img src="images/Home Server 2.0.webp" alt="Home Server 2.0">
+                    <img src="images/IMG_8782.JPG" alt="Homelab IMG_8782">
+                    <img src="images/Homelab 2.1.webp" alt="Homelab 2.1">
+                    <img src="images/My Homelab Setup v0.webp" alt="Homelab Setup v0">
+                </div>
+                <div class="homelab-reddit-link-wrapper">
+                    <a href="https://www.reddit.com/user/SteveAnik/" class="homelab-reddit-link" target="_blank">
+                        <i class="fab fa-reddit"></i> See more on Reddit
+                    </a>
                 </div>
             </section>
         </div>
