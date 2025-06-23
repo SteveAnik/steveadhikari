@@ -1954,11 +1954,9 @@ button[type="submit"]:disabled {
 }
 
 .about-section,
-.biography-section {
+.container {
     position: relative;
     z-index: 1;
-    max-width: 1400px;
-    margin: 0 auto;
 }
 
 .biography-section {
@@ -2375,5 +2373,77 @@ button[type="submit"]:disabled {
         right: 0;
         font-size: 1.5rem;
     }
+}
+
+.about-column > a[style*="position: relative"] {
+    position: relative !important;
+    display: block;
+}
+
+.about-tile.about-text {
+    position: relative;
+    z-index: 1;
+}
+
+.about-orb-bg {
+    position: absolute;
+    left: 50%;
+    top: 45%;
+    transform: translate(-50%, -50%);
+    width: 700px;
+    height: 700px;
+    max-width: 90vw;
+    max-height: 90vw;
+    z-index: 0;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(0,0,0,0.98) 56%, rgba(0,0,0,0.92) 62%, transparent 63%),
+        conic-gradient(from 0deg, #217dbb, #174a6a, #3498db, #217dbb 100%);
+    box-shadow:
+        0 0 60px 10px #174a6a,
+        0 0 120px 30px #217dbb;
+    filter: blur(2px) brightness(0.6);
+    opacity: 0.85;
+    animation: about-orb-ring-pulse 4s ease-in-out infinite alternate;
+    pointer-events: none;
+}
+
+@keyframes about-orb-ring-pulse {
+    0% {
+        filter: blur(2px) brightness(0.6);
+        opacity: 0.85;
+        box-shadow:
+            0 0 60px 10px #174a6a,
+            0 0 120px 30px #217dbb;
+    }
+    50% {
+        filter: blur(6px) brightness(0.8);
+        opacity: 0.95;
+        box-shadow:
+            0 0 100px 30px #217dbb,
+            0 0 180px 60px #3498db;
+    }
+    100% {
+        filter: blur(2px) brightness(0.6);
+        opacity: 0.85;
+        box-shadow:
+            0 0 60px 10px #174a6a,
+            0 0 120px 30px #217dbb;
+    }
+}
+
+.about .container {
+    position: relative;
+    z-index: 1;
+}
+
+.about .about-orb-bg {
+    z-index: 0;
+}
+
+.about .about-grid,
+.about h2,
+.about .section-title {
+    position: relative;
+    z-index: 2;
 }
 
