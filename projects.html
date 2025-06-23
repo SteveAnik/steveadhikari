@@ -64,7 +64,7 @@
         
         .projects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            grid-template-columns: 1fr 1fr;
             gap: 2rem;
         }
         
@@ -247,28 +247,20 @@
             // Sample project data - replace with your actual projects
             const projects = [
                 {
-                    title: 'Web Development',
-                    category: 'Development',
-                    description: 'Modern web applications built with the latest technologies.',
-                    image: 'https://source.unsplash.com/random/600x400/?web,development',
-                    demoLink: '#',
-                    codeLink: '#'
+                    title: 'Northridge Friends Church Website',
+                    category: 'Web Development (WordPress)',
+                    description: 'Developed and launched a modern, responsive website for Northridge Friends Church using WordPress. Focused on user experience, accessibility, and seamless navigation for the congregation and visitors.',
+                    image: 'images/Screenshot 2025-06-23 at 11.44.33 AM.png',
+                    demoLink: 'https://www.northridgefriends.org/',
+                    codeLink: ''
                 },
                 {
-                    title: 'UI/UX Design',
-                    category: 'Design',
-                    description: 'User-centered design solutions for web and mobile applications.',
-                    image: 'https://source.unsplash.com/random/600x400/?design,ui',
-                    demoLink: '#',
-                    codeLink: '#'
-                },
-                {
-                    title: 'Network Security',
-                    category: 'Security',
-                    description: 'Secure network infrastructure and cybersecurity solutions.',
-                    image: 'https://source.unsplash.com/random/600x400/?network,security',
-                    demoLink: '#',
-                    codeLink: '#'
+                    title: 'WSU TIE AI Chatbot UI/UX',
+                    category: 'UI/UX & AI Integration',
+                    description: 'Led UI/UX design for Wichita State University\'s Technology Industry Engagement AI Chatbot project. Contributed to hosting on Microsoft Azure and collaborated on FastAPI, Langchain, and RAG-based backend. See the open-source code and live project.',
+                    image: 'images/Screenshot 2025-06-23 at 11.51.33 AM.png',
+                    demoLink: 'https://www.wichita.edu/industry_and_defense/TIE/news/index.php',
+                    codeLink: 'https://github.com/SteveAnik/Langchain-AI-Chatbot-Server'
                 }
             ];
             
@@ -293,9 +285,7 @@
                             <a href="${project.demoLink}" class="project-link" target="_blank">
                                 <i class="fas fa-external-link-alt"></i> Demo
                             </a>
-                            <a href="${project.codeLink}" class="project-link" target="_blank">
-                                <i class="fab fa-github"></i> Code
-                            </a>
+                            ${project.codeLink ? `<a href="${project.codeLink}" class="project-link" target="_blank"><i class="fab fa-github"></i> Code</a>` : ''}
                         </div>
                     </div>
                 `;
