@@ -2447,3 +2447,74 @@ button[type="submit"]:disabled {
     z-index: 2;
 }
 
+/* Mobile layout for about section */
+@media (max-width: 768px) {
+    .about-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        padding: 0;
+    }
+    
+    .about-column {
+        margin-top: 0 !important;
+        gap: 1.5rem;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .about-column:first-child,
+    .about-column:last-child {
+        margin-top: 0;
+    }
+    
+    .about-column:nth-child(2) {
+        grid-row: auto;
+    }
+    
+    /* Create a flex container for side-by-side images */
+    .mobile-first-row,
+    .mobile-second-row {
+        display: flex;
+        gap: 1rem;
+        width: 100%;
+    }
+    
+    .mobile-first-row .about-tile,
+    .mobile-second-row .about-tile {
+        flex: 1;
+        width: 50%;
+    }
+    
+    /* Order the elements for mobile layout */
+    .mobile-top {
+        order: 1;
+    }
+    
+    .mobile-first-row {
+        order: 2;
+    }
+    
+    .mobile-middle {
+        order: 3;
+    }
+    
+    .mobile-second-row {
+        order: 4;
+    }
+    
+    .mobile-bottom {
+        order: 5;
+    }
+    
+    /* Make tiles smaller on mobile */
+    .about-tile {
+        min-height: 200px;
+        padding: 1.5rem;
+    }
+    
+    .about-tile.about-text {
+        min-height: 300px;
+    }
+}
+
