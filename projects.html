@@ -319,6 +319,14 @@
         </div>
     </main>
 
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="lightbox" style="display:none;">
+        <div class="lightbox-content">
+            <span class="close-lightbox">&times;</span>
+            <img id="lightbox-img" src="" alt="Enlarged view">
+        </div>
+    </div>
+
     <section id="contact" class="contact">
         <div class="matrix-bg"></div>
         <div class="container">
@@ -450,6 +458,56 @@
                     createTile();
                 }
             });
+        });
+
+        // Lightbox for project-photo-gallery
+        document.addEventListener('DOMContentLoaded', function() {
+            const galleryImages = document.querySelectorAll('.project-photo-gallery img');
+            const homelabImages = document.querySelectorAll('.homelab-gallery img');
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+            const closeBtn = document.querySelector('.close-lightbox');
+
+            function openLightboxWithSrc(src) {
+                lightboxImg.src = src;
+                lightbox.style.display = 'flex';
+                document.body.style.overflow = 'hidden';
+                setTimeout(() => {
+                    lightbox.classList.add('active');
+                }, 10);
+            }
+
+            galleryImages.forEach(img => {
+                img.addEventListener('click', function() {
+                    openLightboxWithSrc(this.src);
+                });
+            });
+            homelabImages.forEach(img => {
+                img.addEventListener('click', function() {
+                    openLightboxWithSrc(this.src);
+                });
+            });
+
+            closeBtn.addEventListener('click', closeLightbox);
+            lightbox.addEventListener('click', function(e) {
+                if (e.target === this) {
+                    closeLightbox();
+                }
+            });
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    closeLightbox();
+                }
+            });
+            function closeLightbox() {
+                lightbox.classList.remove('active');
+                lightbox.classList.add('closing');
+                setTimeout(() => {
+                    lightbox.style.display = 'none';
+                    lightbox.classList.remove('closing');
+                    document.body.style.overflow = 'auto';
+                }, 400);
+            }
         });
     </script>
 </body>
