@@ -351,8 +351,8 @@
                     <div class="social-links">
                         <a href="https://www.linkedin.com/in/steve-adhikari-225816190/" target="_blank"><i class="fab fa-linkedin"></i></a>
                         <a href="https://github.com/SteveAnik" target="_blank"><i class="fab fa-github"></i></a>
-                        <a href="https://www.facebook.com/anik.adhikari.180" target="_blank"><i class="fab fa-facebook"></i></a>
-                        <a href="https://www.instagram.com/adhikari_anik/" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.reddit.com/user/SteveAnik/" target="_blank"><i class="fab fa-reddit"></i></a>
+                        <a href="https://www.instagram.com/developersteve2023/" target="_blank"><i class="fab fa-instagram"></i></a>
                         <a href="https://www.youtube.com/@anikadhikari851" target="_blank"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
@@ -442,71 +442,6 @@
                     const y = e.clientY - rect.top;
                     tile.style.transform = `perspective(1000px) rotateX(${(y - rect.height/2) / 20}deg) rotateY(${(x - rect.width/2) / 20}deg)`;
                 });
-                
-                tile.addEventListener('mouseleave', () => {
-                    tile.style.transform = 'none';
-                });
-            }
-            
-            // Handle window resize
-            window.addEventListener('resize', () => {
-                const tiles = document.querySelectorAll('.tile');
-                tiles.forEach(tile => tile.remove());
-                
-                const newTileCount = Math.floor(window.innerWidth / 100) * Math.floor(window.innerHeight / 100);
-                for (let i = 0; i < newTileCount; i++) {
-                    createTile();
-                }
-            });
-        });
-
-        // Lightbox for project-photo-gallery
-        document.addEventListener('DOMContentLoaded', function() {
-            const galleryImages = document.querySelectorAll('.project-photo-gallery img');
-            const homelabImages = document.querySelectorAll('.homelab-gallery img');
-            const lightbox = document.getElementById('lightbox');
-            const lightboxImg = document.getElementById('lightbox-img');
-            const closeBtn = document.querySelector('.close-lightbox');
-
-            function openLightboxWithSrc(src) {
-                lightboxImg.src = src;
-                lightbox.style.display = 'flex';
-                document.body.style.overflow = 'hidden';
-                setTimeout(() => {
-                    lightbox.classList.add('active');
-                }, 10);
-            }
-
-            galleryImages.forEach(img => {
-                img.addEventListener('click', function() {
-                    openLightboxWithSrc(this.src);
-                });
-            });
-            homelabImages.forEach(img => {
-                img.addEventListener('click', function() {
-                    openLightboxWithSrc(this.src);
-                });
-            });
-
-            closeBtn.addEventListener('click', closeLightbox);
-            lightbox.addEventListener('click', function(e) {
-                if (e.target === this) {
-                    closeLightbox();
-                }
-            });
-            document.addEventListener('keydown', function(e) {
-                if (e.key === 'Escape') {
-                    closeLightbox();
-                }
-            });
-            function closeLightbox() {
-                lightbox.classList.remove('active');
-                lightbox.classList.add('closing');
-                setTimeout(() => {
-                    lightbox.style.display = 'none';
-                    lightbox.classList.remove('closing');
-                    document.body.style.overflow = 'auto';
-                }, 400);
             }
         });
     </script>
