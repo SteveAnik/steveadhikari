@@ -443,6 +443,52 @@
                     tile.style.transform = `perspective(1000px) rotateX(${(y - rect.height/2) / 20}deg) rotateY(${(x - rect.width/2) / 20}deg)`;
                 });
             }
+
+            // --- Lightbox logic for project and homelab galleries ---
+            function openLightboxWithImg(img) {
+                const lightbox = document.getElementById('lightbox');
+                const lightboxImg = document.getElementById('lightbox-img');
+                lightboxImg.src = img.src;
+                lightbox.style.display = 'flex';
+                document.body.style.overflow = 'hidden';
+                setTimeout(() => {
+                    lightbox.classList.add('active');
+                }, 10);
+            }
+
+            // Add click event to all images in project-photo-gallery and homelab-gallery
+            document.querySelectorAll('.project-photo-gallery img, .homelab-gallery img').forEach(img => {
+                img.style.cursor = 'pointer';
+                img.addEventListener('click', function() {
+                    openLightboxWithImg(this);
+                });
+            });
+
+            // Close lightbox when clicking the close button or outside the image
+            document.querySelector('.close-lightbox').addEventListener('click', closeLightbox);
+            document.getElementById('lightbox').addEventListener('click', function(e) {
+                if (e.target === this) {
+                    closeLightbox();
+                }
+            });
+
+            function closeLightbox() {
+                const lightbox = document.getElementById('lightbox');
+                lightbox.classList.remove('active');
+                lightbox.classList.add('closing');
+                setTimeout(() => {
+                    lightbox.style.display = 'none';
+                    lightbox.classList.remove('closing');
+                    document.body.style.overflow = 'auto';
+                }, 400);
+            }
+
+            // Close lightbox with Escape key
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    closeLightbox();
+                }
+            });
         });
     </script>
 </body>
