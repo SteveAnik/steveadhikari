@@ -67,8 +67,8 @@
         
         .projects-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 2rem;
         }
         
         .project-card {
@@ -149,6 +149,12 @@
         .project-link:hover {
             background: rgba(52, 152, 219, 0.1);
             transform: translateY(-2px);
+        }
+        
+        @media (max-width: 1024px) {
+            .projects-grid {
+                grid-template-columns: 1fr 1fr;
+            }
         }
         
         @media (max-width: 768px) {
@@ -335,7 +341,7 @@
                     <h2>Get In Touch</h2>
                     <div class="contact-details">
                         <p><i class="fas fa-envelope"></i> steve@steveadhikari.com</p>
-                        <p><i class="fas fa-phone"></i> +1 (316) 285-9170</p>
+                        <p><i class="fas fa-phone"></i> +1 (316) 251-2055</p>
                         <p><i class="fas fa-map-marker-alt"></i> Wichita, KS</p>
                     </div>
                     <div class="quick-links">
@@ -399,6 +405,14 @@
                     image: 'images/WSU.png',
                     demoLink: 'https://www.wichita.edu/industry_and_defense/TIE/news/index.php',
                     codeLink: 'https://github.com/SteveAnik/Langchain-AI-Chatbot-Server'
+                },
+                {
+                    title: 'AI Powered Personal Advisor & Talent Finder App',
+                    category: 'Cross-platform App development',
+                    description: 'Contributing to the development and optimization of the Ringorang Talent Finder App. Responsibilities include building on the Microsoft Azure platform, managing project workflows, back-end operations, database testing, and implementing software testing processes to ensure reliability.',
+                    image: 'images/Ringorang.png',
+                    demoLink: 'https://www.ringorang.com/',
+                    codeLink: ''
                 }
             ];
             
