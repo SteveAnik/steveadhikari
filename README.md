@@ -1,25 +1,52 @@
-# Personal Portfolio Website
+# Steve A. Adhikari — Portfolio
 
-A modern, responsive portfolio website built with HTML, CSS, and JavaScript.
+A static, responsive portfolio site built with HTML, CSS, and JavaScript.
 
-## Deployment
+**Live site:** [steveadhikari.pages.dev](https://steveadhikari.pages.dev) (Cloudflare Pages)
 
-1. Clone this repository
-2. Add your images to the `images` folder
-3. Deploy to GitHub Pages:
-   - Push to GitHub repository
-   - Go to Settings > Pages
-   - Select `main` branch and `/ (root)` as source
-   - Save and wait for deployment
+## Project structure
 
-4. Deploy to Cloudflare:
-   - Connect your GitHub repository to Cloudflare Pages
-   - Select the `main` branch
-   - Deploy
+| Path | Description |
+|------|-------------|
+| `index.html` | Home page |
+| `about.html` | About page |
+| `photo.html` | Photography gallery |
+| `projects.html` | Project cards |
+| `css/` | Styles (`style.scss` source, `style.css` compiled) |
+| `js/` | Scripts (carousel, contact form, matrix background, etc.) |
+| `images/` | Site images and assets |
+| `wrangler.jsonc` | Cloudflare Workers static deploy config (optional) |
+| `package.json` | Build script that copies static files into `dist/` |
 
-## Structure
-- `index.html` - Main website file
-- `css/style.css` - Styles and animations
-- `js/main.js` - Interactive elements
-- `images/` - Folder for all images
-- `assets/` - Additional resources
+## Local development
+
+```bash
+# Serve locally (Python)
+python3 -m http.server 8000
+# Open http://127.0.0.1:8000
+```
+
+Or build the `dist/` folder (used by Cloudflare Workers deploy):
+
+```bash
+npm run build
+```
+
+## Deployment (Cloudflare Pages)
+
+Production deploys run automatically when you push to `main`.
+
+1. Connect this repo in [Cloudflare Pages](https://dash.cloudflare.com/) as project **`steveadhikari`**
+2. **Production branch:** `main`
+3. **Build command:** leave empty, or `npm run build` with **Build output directory** `/` (or `dist` if using the npm build)
+4. Custom domain (optional): add `steveadhikari.com` in Pages → Custom domains
+
+GitHub status checks report deploy results for connected Cloudflare projects.
+
+## Optional: Cloudflare Workers
+
+`wrangler.jsonc` configures a Workers static asset deploy (`npm run build` → `dist/`). This is separate from the primary Pages project; only needed if you use the **website** Workers service.
+
+## License
+
+Personal portfolio — all rights reserved.
