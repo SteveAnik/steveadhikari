@@ -2,9 +2,6 @@
   "name": "steveadhikari",
   "private": true,
   "scripts": {
-    "build": "echo \"Static portfolio — no build step required\""
-  },
-  "devDependencies": {
-    "wrangler": "^4.19.0"
+    "build": "rm -rf dist && mkdir -p dist && cp *.html dist/ && cp -r css js images dist/"
   }
 }
