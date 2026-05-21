@@ -2,6 +2,8 @@
 # /images
 /resume
 
+node_modules/
+
 # wrangler files
 .wrangler
 .dev.vars*
