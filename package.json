@@ -1,7 +1,0 @@
-{
-  "name": "steveadhikari",
-  "private": true,
-  "scripts": {
-    "build": "rm -rf dist && mkdir -p dist && cp *.html dist/ && cp -r css js images dist/"
-  }
-}
