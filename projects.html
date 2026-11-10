@@ -34,30 +34,7 @@
             overflow: hidden;
         }
         
-        .tile-grid {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-            gap: 1px;
-            pointer-events: none;
-            z-index: 0;
-        }
-        
-        .tile {
-            background-color: rgba(52, 152, 219, 0.1);
-            transition: all 0.3s ease;
-            aspect-ratio: 1;
-        }
-        
-        .tile:hover {
-            background-color: rgba(52, 152, 219, 0.3);
-        }
-        
-        .content-wrapper {
+.content-wrapper {
             position: relative;
             z-index: 1;
             max-width: 1400px;
@@ -297,10 +274,6 @@
 
     
     <main class="page-content">
-        <div class="tile-grid">
-            <!-- Tiles will be added by JavaScript -->
-        </div>
-        
         <div class="content-wrapper">
             <section class="projects-section">
                 <h1>My Projects</h1>
@@ -403,11 +376,8 @@
     <script>
         // Create tiles
         document.addEventListener('DOMContentLoaded', function() {
-            const tileGrid = document.querySelector('.tile-grid');
             const projectsGrid = document.querySelector('.projects-grid');
-            const tileCount = Math.floor(window.innerWidth / 100) * Math.floor(window.innerHeight / 100);
-            
-            // Sample project data - replace with your actual projects
+            // Project data - replace with your actual projects
             const projects = [
                 {
                     title: 'Northridge Friends Church Website',
@@ -435,11 +405,6 @@
                 }
             ];
             
-            // Create tiles
-            for (let i = 0; i < tileCount; i++) {
-                createTile();
-            }
-            
             // Create project cards
             projects.forEach(project => {
                 const projectCard = document.createElement('div');
@@ -463,20 +428,6 @@
                 projectsGrid.appendChild(projectCard);
             });
             
-            function createTile() {
-                const tile = document.createElement('div');
-                tile.className = 'tile';
-                tileGrid.appendChild(tile);
-                
-                // Add hover effect
-                tile.addEventListener('mousemove', (e) => {
-                    const rect = tile.getBoundingClientRect();
-                    const x = e.clientX - rect.left;
-                    const y = e.clientY - rect.top;
-                    tile.style.transform = `perspective(1000px) rotateX(${(y - rect.height/2) / 20}deg) rotateY(${(x - rect.width/2) / 20}deg)`;
-                });
-            }
-
             // --- Lightbox logic for project and homelab galleries ---
             function openLightboxWithImg(img) {
                 const lightbox = document.getElementById('lightbox');

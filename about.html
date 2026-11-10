@@ -34,17 +34,7 @@
             overflow: hidden;
         }
         
-        .tile {
-            background-color: rgba(52, 152, 219, 0.1);
-            transition: all 0.3s ease;
-            aspect-ratio: 1;
-        }
-        
-        .tile:hover {
-            background-color: rgba(52, 152, 219, 0.3);
-        }
-        
-        .content-wrapper {
+.content-wrapper {
             position: relative;
             z-index: 1;
             max-width: 1200px;
@@ -174,44 +164,6 @@
     <script src="js/matrix.js"></script>
     <script src="js/mobile-menu.js"></script>
     <script src="js/contact-form.js"></script>
-    <script>
-        // Create tiles
-        document.addEventListener('DOMContentLoaded', function() {
-            const tileGrid = document.querySelector('.tile-grid');
-            const tileCount = Math.floor(window.innerWidth / 100) * Math.floor(window.innerHeight / 100);
-            
-            for (let i = 0; i < tileCount; i++) {
-                const tile = document.createElement('div');
-                tile.className = 'tile';
-                tileGrid.appendChild(tile);
-                
-                // Add hover effect
-                tile.addEventListener('mousemove', (e) => {
-                    const rect = tile.getBoundingClientRect();
-                    const x = e.clientX - rect.left;
-                    const y = e.clientY - rect.top;
-                    tile.style.transform = `perspective(1000px) rotateX(${(y - rect.height/2) / 20}deg) rotateY(${(x - rect.width/2) / 20}deg)`;
-                });
-                
-                tile.addEventListener('mouseleave', () => {
-                    tile.style.transform = 'none';
-                });
-            }
-            
-            // Handle window resize
-            window.addEventListener('resize', () => {
-                const tiles = document.querySelectorAll('.tile');
-                tiles.forEach(tile => tile.remove());
-                
-                const newTileCount = Math.floor(window.innerWidth / 100) * Math.floor(window.innerHeight / 100);
-                for (let i = 0; i < newTileCount; i++) {
-                    const tile = document.createElement('div');
-                    tile.className = 'tile';
-                    tileGrid.appendChild(tile);
-                }
-            });
-        });
-    </script>
     <script>document.querySelectorAll('.copyright-year').forEach(el => el.textContent = new Date().getFullYear());</script>
 </body>
 </html>
